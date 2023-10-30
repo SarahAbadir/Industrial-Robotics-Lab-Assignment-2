@@ -36,7 +36,7 @@ surf([-3,-3;3,3],[-3,3;-3,3],[0.02,0.02;0.02,0.02],'CData',imread('concrete.jpg'
 %surf([-3,-3;3,3],[ y, z, 'CData', CData, 'FaceColor', FaceColor);
 %%
 %Load in the movement function
-LinearUR3movement()
+%LinearUR3movement()
 %r = LinearUR3movement(transl(0.5, 0, 0.85))
 end
 
