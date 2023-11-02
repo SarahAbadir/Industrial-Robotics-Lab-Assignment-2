@@ -2,7 +2,6 @@ classdef OmronTM5 < RobotBaseClass
     %% APplying CAD model to robot
 
     properties(Access = public)              
-        
         plyFileNameStem = 'Link'; %change to TM5 model once created
     end
     
