@@ -7,8 +7,8 @@ function BaristaBots()
     % Setting up workspace size
     axis([-3, 3, -3, 3, 0, 4])
 
-    % %environment and safety object setup and import
-    % PlaceObject('scene.ply', [1,1,1]);
+    %environment and safety object setup and import
+    PlaceObject('CoffeeBar.ply', [1,1,1]);
 
     % cup setup
     hold on
