@@ -2,18 +2,21 @@ function BaristaBots()
     close all
 
     % Load in the Omron TM5 robot model
-    r = OmronTM5;  % Use the OmronTM5 class instead of LinearUR3
+    r = OmronTM5;  % Use the OmronTM5 class
 
     % Setting up workspace size
     axis([-3, 3, -3, 3, 0, 4])
+
+    % %environment and safety object setup and import
+    % PlaceObject('scene.ply', [1,1,1]);
 
     % cup setup
     hold on
 
     % Define cup positions and orientations as arrays
     cup_positions = [
-        [0, 0.5, 0.2];
-        [0.5, 0, 1.1];
+        [0, 0.5, 0.1];
+        [0.5, 0, 0.1];
         % Add more cup positions as needed
     ];
 
@@ -25,8 +28,8 @@ function BaristaBots()
 
     % Define the cup wall cup positions and orientations as arrays
     goal_positions = [
-        [0, 0.7, 0.2];
-        [0.7, 0, 1.1];
+        [-0.5, 0, 0.1];
+        [-0.5, -0.25, 0.1];
         % Add more goal positions as needed
     ];
 
@@ -35,9 +38,6 @@ function BaristaBots()
         deg2rad([0, 180, -90, 0, 0, 90, 0]);
         % Add more goal orientations as needed
     ];
-
-    %environment and safety object setup and import
-    PlaceObject('scene.ply', [1,1,1]);
 
     % Create an empty array to hold cup objects to spawn in
     cups = [];
