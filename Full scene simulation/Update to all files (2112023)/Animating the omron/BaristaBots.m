@@ -52,6 +52,7 @@ function BaristaBots()
 
     %environment and safety object setup and import
     PlaceObject('CoffeeBarScaled.ply', [-0.5,1.5,1]);
+    PlaceObject('emergencyStopButton.ply', [-0.5,1.5,1.5]);
 
     % Inclusion of the wood floor via image texture
     surf([-2.8, -2.8; 2.8, 2.8], [-2.8, 2.8; -2.8, 2.8], [0.01, 0.01; 0.01, 0.01], 'CData', imread('wood.jpg'), 'FaceColor', 'texturemap');
