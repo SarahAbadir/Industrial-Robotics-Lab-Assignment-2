@@ -5,23 +5,15 @@ function BaristaBots()
     r = OmronTM5;  % Use the OmronTM5 class
 
     % Setting up workspace size
-    axis([-3, 3, -3, 3, 0, 4])
-
-<<<<<<< HEAD
-    % %environment and safety object setup and import
-    % PlaceObject('scene.ply', [1,1,1]);
-=======
-    %environment and safety object setup and import
-    PlaceObject('CoffeeBar.ply', [1,1,1]);
->>>>>>> 31d92cb237ccaf51c2dbbc36a3e4d65c92dcdb46
+    axis([-4, 4, -4, 4, 0, 5])
 
     % cup setup
     hold on
 
     % Define cup positions and orientations as arrays
     cup_positions = [
-        [0, 0.5, 0.1];
-        [0.5, 0, 0.1];
+        [-1, 2.1, 2];
+        [-1.1, 2.1, 2];
         % Add more cup positions as needed
     ];
 
@@ -33,8 +25,8 @@ function BaristaBots()
 
     % Define the cup wall cup positions and orientations as arrays
     goal_positions = [
-        [-0.5, 0, 0.1];
-        [-0.5, -0.25, 0.1];
+        [-1, 1, 2];
+        [-1.1, 1, 2];
         % Add more goal positions as needed
     ];
 
@@ -53,12 +45,13 @@ function BaristaBots()
         cups = [cups, cup];
     end
 
-    % Environment and safety object setup and import
-    % Add your environment objects here
 
     % Scale and position the robot model
-    scaleFactor = 2;
-    r.model.base = transl(0, 0, 0.1); % Example base position, adjust as needed
+    %scaleFactor = 2;
+    r.model.base = transl(-1, 1.5, 2); % Example base position, adjust as needed
+
+    %environment and safety object setup and import
+    PlaceObject('CoffeeBarScaled.ply', [-0.5,1.5,1]);
 
     % Inclusion of the wood floor via image texture
     surf([-2.8, -2.8; 2.8, 2.8], [-2.8, 2.8; -2.8, 2.8], [0.01, 0.01; 0.01, 0.01], 'CData', imread('wood.jpg'), 'FaceColor', 'texturemap');
