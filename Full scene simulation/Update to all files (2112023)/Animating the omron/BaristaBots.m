@@ -83,9 +83,12 @@ function BaristaBots()
     PlaceObject('VaseScaled.ply', [0,0.6,2.4]);
     PlaceObject('lamp.ply', [3.5,-3.5,0.1]);
     PlaceObject('lamp.ply', [3.5,3.5,0.1]);
+    PlaceObject('lamp.ply', [-3.75,0,0.1]);
     PlaceObject('pendantlight.ply', [-2, -2,3]);
+    PlaceObject('pendantlight.ply', [2, 2,3]);
     % Inclusion of the wood floor via image texture
     surf([-4, -4; 4, 4], [-4, 4; -4, 4], [0.01, 0.01; 0.01, 0.01], 'CData', imread('wood.jpg'), 'FaceColor', 'texturemap');
+   
 
     % Initialize step counter
     current_step = 1;
