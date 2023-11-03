@@ -4,6 +4,7 @@ function BaristaBots()
     % Load in the Omron TM5 robot model
     r = OmronTM5;  % Use the OmronTM5 class
 
+    r2 = DobotMagician;
     % Setting up workspace size
     axis([-4, 4, -4, 4, 0, 5])
 
@@ -50,6 +51,8 @@ function BaristaBots()
     %scaleFactor = 2;
     r.model.base = transl(-1, 1.5, 2); % Example base position, adjust as needed
 
+    r2.model.base = transl(1.3,1.25,1.25);
+    r2.TestMoveJoints();
     %environment and safety object setup and import
     PlaceObject('CoffeeBarScaled.ply', [-0.5,1.5,1]);
     PlaceObject('emergencyStopWallMounted.ply', [-2.55,1.8,1.5]);
