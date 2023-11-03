@@ -78,6 +78,12 @@ function BaristaBots()
     PlaceObject('art2.ply', [-4,-1,3]);
     PlaceObject('art2.ply', [-4,-2,2]);
     PlaceObject('art2.ply', [-4,-3,3]);
+    PlaceObject('VaseScaled.ply', [-2,0.6,2.4]);
+    PlaceObject('VaseScaled.ply', [-1,0.6,2.4]);
+    PlaceObject('VaseScaled.ply', [0,0.6,2.4]);
+    PlaceObject('lamp.ply', [3.5,-3.5,0.1]);
+    PlaceObject('lamp.ply', [3.5,3.5,0.1]);
+    PlaceObject('pendantlight.ply', [-2, -2,3]);
     % Inclusion of the wood floor via image texture
     surf([-4, -4; 4, 4], [-4, 4; -4, 4], [0.01, 0.01; 0.01, 0.01], 'CData', imread('wood.jpg'), 'FaceColor', 'texturemap');
 
