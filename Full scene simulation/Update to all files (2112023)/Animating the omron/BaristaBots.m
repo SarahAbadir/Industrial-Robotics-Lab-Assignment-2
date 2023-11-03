@@ -4,7 +4,7 @@ function BaristaBots()
     % Load in the Omron TM5 robot model
     r = OmronTM5;  % Use the OmronTM5 class
 
-    %r2 = DobotMagician;
+    r2 = DobotMagician(transl(1.3,1.25,1.25));
     % Setting up workspace size
     axis([-4, 4, -4, 4, 0, 5])
 
@@ -93,6 +93,19 @@ function BaristaBots()
     % Get a trajectory for robot joint angles
     qPath = jtraj(r.model.qlim(:, 1)', r.model.qlim(:, 2)', 200);
 
+    qPath2 = jtraj(r2.model.qlim(:, 1)', r2.model.qlim(:, 2)', 200);
+
+    q0 = r2.model.getpos();
+    T1 = transl(1.25,1.75,1.28);
+    q1 = r2.model.ikcon(T1);
+    qTraj1 = jtraj(q0,q1,100);
+
+    for i = 1:size(qTraj1,1)
+        q = qTraj1(i,:);
+        r2.model.animate(q);   
+        pause(0.01)  
+    end
+    
     % Animate the model along the qPath created
     for i = 1:length(qPath)
         r.model.animate(qPath(i, :));
