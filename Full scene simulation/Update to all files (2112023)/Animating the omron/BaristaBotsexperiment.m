@@ -3,17 +3,31 @@ function BaristaBots()
 
    
     % Setting up workspace size
-    axis([-4, 4, -4, 4, 0, 5])
-
-    % cup setup
+    axis([-6, 6, -6, 6, 0, 6])
+    surf([-4, -4; 4, 4], [-4, 4; -4, 4], [0.01, 0.01; 0.01, 0.01], 'CData', imread('wood.jpg'), 'FaceColor', 'texturemap');
+   %environment and safety object setup and import
+    PlaceObject('CoffeeBarScaled.ply', [-0.5,1.5,1]);
+    PlaceObject('emergencyStopWallMounted.ply', [-2.55,1.8,1.5]);
+    PlaceObject('emergencyStopWallMountedtwo.ply', [0.8, 2.5,1.5]);
+    PlaceObject('fireExtinguisher.ply', [1, 2.5, 1]);
+    PlaceObject('fireExtinguisher.ply', [-2.55, 1.5, 1]);
+    PlaceObject('couch.ply', [-4, -1, 0]);
+    PlaceObject('coaster.ply', [1.25,1.75,1.25]);
+    PlaceObject('coaster.ply', [1.25,1.75,1.26]);
+    PlaceObject('coaster.ply', [1.25,1.75,1.27]);
+    PlaceObject('coaster.ply', [1.25,1.75,1.28]);
+    % Inclusion of the wood floor via image texture
+    %surf([-4, -4; 4, 4], [-4, 4; -4, 4], [0.01, 0.01; 0.01, 0.01], 'CData', imread('wood.jpg'), 'FaceColor', 'texturemap');
+   % r = OmronTM5;  % Use the OmronTM5 class
+  %  r2 = DobotMagician;
     hold on
 %% Loading in both Robots into th Environment
 
  % Load in the Omron TM5 robot model
-    r = OmronTM5;  % Use the OmronTM5 class
+   
 
-    r2 = DobotMagician;
-
+   
+    hold on
 %% Cup Addition into the Environment
 
     % Define cup positions and orientations as arrays
@@ -58,19 +72,7 @@ function BaristaBots()
 
     r2.model.base = transl(1.3,1.25,1.25);
     r2.TestMoveJoints();
-    %environment and safety object setup and import
-    PlaceObject('CoffeeBarScaled.ply', [-0.5,1.5,1]);
-    PlaceObject('emergencyStopWallMounted.ply', [-2.55,1.8,1.5]);
-    PlaceObject('emergencyStopWallMountedtwo.ply', [0.8, 2.5,1.5]);
-    PlaceObject('fireExtinguisher.ply', [1, 2.5, 1]);
-    PlaceObject('fireExtinguisher.ply', [-2.55, 1.5, 1]);
-    PlaceObject('couch.ply', [-4, -1, 0]);
-    PlaceObject('coaster.ply', [1.25,1.75,1.25]);
-    PlaceObject('coaster.ply', [1.25,1.75,1.26]);
-    PlaceObject('coaster.ply', [1.25,1.75,1.27]);
-    PlaceObject('coaster.ply', [1.25,1.75,1.28]);
-    % Inclusion of the wood floor via image texture
-    surf([-4, -4; 4, 4], [-4, 4; -4, 4], [0.01, 0.01; 0.01, 0.01], 'CData', imread('wood.jpg'), 'FaceColor', 'texturemap');
+   
 
     % Initialize step counter
     current_step = 1;
