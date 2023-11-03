@@ -52,10 +52,12 @@ function BaristaBots()
 
     %environment and safety object setup and import
     PlaceObject('CoffeeBarScaled.ply', [-0.5,1.5,1]);
-    PlaceObject('emergencyStopButton.ply', [-0.5,1.5,1.5]);
-
+    PlaceObject('emergencyStopWallMounted.ply', [-2.55,1.7,1.5]);
+    %PlaceObject('emergencyStopWallMounted2', [0.7, 2.5,1.5]);
+    PlaceObject('fireExtinguisher.ply', [1, 2.5, 1]);
+    PlaceObject('fireExtinguisher.ply', [-2.55, 1.5, 1]);
     % Inclusion of the wood floor via image texture
-    surf([-2.8, -2.8; 2.8, 2.8], [-2.8, 2.8; -2.8, 2.8], [0.01, 0.01; 0.01, 0.01], 'CData', imread('wood.jpg'), 'FaceColor', 'texturemap');
+    surf([-4, -4; 4, 4], [-4, 4; -4, 4], [0.01, 0.01; 0.01, 0.01], 'CData', imread('wood.jpg'), 'FaceColor', 'texturemap');
 
     % Initialize step counter
     current_step = 1;
