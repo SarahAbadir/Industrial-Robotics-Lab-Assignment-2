@@ -4,7 +4,7 @@ function BaristaBots()
     % Load in the Omron TM5 robot model
     r = OmronTM5;  % Use the OmronTM5 class
 
-    r2 = DobotMagician(transl(1.3,1.25,1.25));
+    r2 = DobotMagician(transl(1.3,1.25,1.45));
     % Setting up workspace size
     axis([-4, 4, -4, 4, 0, 5])
 
