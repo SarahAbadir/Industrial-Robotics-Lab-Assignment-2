@@ -88,6 +88,8 @@ function BaristaBots()
     PlaceObject('lamp.ply', [-3.75,0,0.1]);
     PlaceObject('pendantlight.ply', [-2, -2,3]);
     PlaceObject('pendantlight.ply', [2, 2,3]);
+    PlaceObject('personMaleOld.ply', [0.8,1.5,0.5]);
+    PlaceObject('coffeetable.ply', [-1,-2,0]);
     % Inclusion of the wood floor via image texture
     surf([-4, -4; 4, 4], [-4, 4; -4, 4], [0.01, 0.01; 0.01, 0.01], 'CData', imread('wood.jpg'), 'FaceColor', 'texturemap');
    
