@@ -56,6 +56,11 @@ function BaristaBots()
     PlaceObject('emergencyStopWallMountedtwo.ply', [0.8, 2.5,1.5]);
     PlaceObject('fireExtinguisher.ply', [1, 2.5, 1]);
     PlaceObject('fireExtinguisher.ply', [-2.55, 1.5, 1]);
+    PlaceObject('couch.ply', [-4, -1, 0]);
+    PlaceObject('coaster.ply', [1.25,1.75,1.25]);
+    PlaceObject('coaster.ply', [1.25,1.75,1.26]);
+    PlaceObject('coaster.ply', [1.25,1.75,1.27]);
+    PlaceObject('coaster.ply', [1.25,1.75,1.28]);
     % Inclusion of the wood floor via image texture
     surf([-4, -4; 4, 4], [-4, 4; -4, 4], [0.01, 0.01; 0.01, 0.01], 'CData', imread('wood.jpg'), 'FaceColor', 'texturemap');
 
