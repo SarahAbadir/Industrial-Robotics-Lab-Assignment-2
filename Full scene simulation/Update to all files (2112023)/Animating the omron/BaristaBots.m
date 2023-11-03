@@ -2,9 +2,11 @@ function BaristaBots()
     close all
 
     % Load in the Omron TM5 robot model
-    r = OmronTM5;  % Use the OmronTM5 class
+    r = OmronTM5(transl(-1, 1.5, 2));  % Use the OmronTM5 class
+    %position the robot model
+    %r.model.base = transl(-1, 1.5, 2); % Example base position, adjust as needed
 
-    r2 = DobotMagician(transl(1.3,1.25,1.45));
+    r2 = DobotMagician(transl(-1.25,0.7,2.2));
     % Setting up workspace size
     axis([-4, 4, -4, 4, 0, 5])
 
@@ -49,7 +51,7 @@ function BaristaBots()
 
     % Scale and position the robot model
     %scaleFactor = 2;
-    r.model.base = transl(-1, 1.5, 2); % Example base position, adjust as needed
+   % r.model.base = transl(-1, 1.5, 2); % Example base position, adjust as needed
 
    % r2.model.base = transl(1.3,1.25,1.45);
    % r2.TestMoveJoints();
@@ -99,7 +101,7 @@ function BaristaBots()
     qPath2 = jtraj(r2.model.qlim(:, 1)', r2.model.qlim(:, 2)', 200);
 
     q0 = r2.model.getpos();
-    T1 = transl(1.25,1.75,1.28);
+    T1 = transl(-1,2.1,2);
     q1 = r2.model.ikcon(T1);
     qTraj1 = jtraj(q0,q1,100);
 
